@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">apk</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="apk_name">permohonan</string>
+    <string name="article_title">Surat Penelitian</string>
+    <string name="articile_subtitle">BICARA VOKASI
+INGAT POLTEKGO</string>
+    <string name="article_text">Surat Izin Penelitian adalah Surat yang dikeluarkan untuk memberikan izin kepada peneliti, baik ituperorangan atau kelompok untuk melakukanpenelitian atau pengambilan datadalam suatu wilayah kerja Pemerintahan
+
+    </string>
+
+</resources>

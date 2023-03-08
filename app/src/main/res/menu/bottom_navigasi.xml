@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/list"
+        android:icon="@drawable/list"
+        android:title="Daftar Pengajuan"/>
+    <item
+        android:id="@+id/pengajuan"
+        android:icon="@drawable/pengajuan"
+        android:title="Pengajuan"/>
+    <item
+        android:id="@+id/verifikasi"
+        android:icon="@drawable/veerf"
+        android:title="Verifikasi"/>
+    <item
+        android:id="@+id/pengaturan"
+        android:icon="@drawable/pengaturan"
+        android:title="Pengaturan"/>
+
+
+</menu>

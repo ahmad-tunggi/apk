@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/a"
+    tools:context=".ScreenActivity">
+
+    <TextView
+        android:id="@+id/text_se"
+        android:layout_marginTop="220dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="SELAMAT DATANG DI"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#780062"
+        />
+
+    <ImageView
+        android:id="@+id/siakad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_se"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="285dp"
+        android:background="@drawable/siakad" />
+
+    <TextView
+        android:id="@+id/text_pol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/siakad"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="POLITEKNIK GOONRALO"
+        android:textColor="#780062"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

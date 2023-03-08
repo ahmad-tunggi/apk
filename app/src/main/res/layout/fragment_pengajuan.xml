@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#780062"
+    tools:context=".fragment.PengajuanFragment">
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/form"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Form Pengajuan"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:paddingLeft="30dp"
+            />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            app:cardCornerRadius="20dp"
+            android:backgroundTint="#37022D"/>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="10dp"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/form"
+            android:layout_width="360dp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="20dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@color/white">
+                <EditText
+                    android:id="@+id/text_perihal"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/corner_edit"
+                    android:hint="Perihal"
+                    android:paddingLeft="20dp"
+                    android:textColor="#780062"
+                    android:textColorHint="#780062"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/text_nosurat"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/text_perihal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/corner_edit"
+                    android:hint="Nomor Surat"
+                    android:paddingLeft="20dp"
+                    android:textColor="#780062"
+                    android:textColorHint="#780062"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/text_juansurat"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/text_nosurat"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/corner_edit"
+                    android:hint="Tujuan Surat"
+                    android:paddingLeft="20dp"
+                    android:textColor="#780062"
+                    android:textColorHint="#780062"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/lokasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/text_juansurat"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/corner_edit"
+                    android:hint="Lokasi Penelitian"
+                    android:paddingLeft="20dp"
+                    android:textColor="#780062"
+                    android:textColorHint="#780062"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/tanggal_buat"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/lokasi"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/corner_edit"
+                    android:hint="Tanggal Buat"
+                    android:paddingLeft="20dp"
+                    android:textColor="#780062"
+                    android:textColorHint="#780062"
+                    android:inputType="date"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/nim"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/tanggal_buat"
+                    android:layout_marginTop="-52dp"
+                    android:background="@drawable/corner_edit"
+                    android:hint="Nim"
+                    android:paddingLeft="20dp"
+                    android:textColor="#780062"
+                    android:textColorHint="#780062"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/judul"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/nim"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/corner_edit"
+                    android:hint="Judul"
+                    android:paddingLeft="20dp"
+                    android:textColor="#780062"
+                    android:textColorHint="#780062"
+                    android:textStyle="bold"/>
+                <RelativeLayout
+                    android:padding="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@+id/judul"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_cancel"
+                        android:textSize="18dp"
+                        android:layout_width="120dp"
+                        android:layout_height="45dp"
+                        android:text="Batal"
+                        android:background="@drawable/corner_edit"
+                        android:textStyle="bold"
+                        android:textColor="#780068"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_simpan"
+                        android:layout_width="120dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@+id/btn_cancel"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="-45dp"
+                        android:layout_marginEnd="1dp"
+                        android:background="@drawable/btn"
+                        android:text="Simpan"
+                        android:textColor="#C7C7C7"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</FrameLayout>
