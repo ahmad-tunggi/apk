@@ -4,11 +4,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.DaftarpertanyaanFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/head"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_tambah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah"/>
+            <TextView
+
+                android:id="@+id/pertanyaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar Pertanyaan"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="#780062"
+                android:textSize="25sp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/verif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verifikasi"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/head"
+        tools:listitem="@layout/list_pertanyaan"
+        android:id="@+id/list_pertanyaan"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent"/>
+    </RelativeLayout>
 
 </FrameLayout>

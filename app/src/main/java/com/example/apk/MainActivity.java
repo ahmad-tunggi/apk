@@ -15,7 +15,9 @@ import com.example.apk.fragment.DaftarpertanyaanFragment;
 import com.example.apk.fragment.HomeFragment;
 import com.example.apk.fragment.Input_pertanyaanFragment;
 import com.example.apk.fragment.PengajuanFragment;
+import com.example.apk.fragment.Pengaturan1Fragment;
 import com.example.apk.fragment.PengaturanFragment;
+import com.example.apk.fragment.PertanyaanFragment;
 import com.example.apk.fragment.VerifikasiFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -44,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new VerifikasiFragment();
                         break;
                     case R.id.pengajuan:
-                        fragment = new PengajuanFragment();
+                        fragment = new PertanyaanFragment();
                         break;
                     case R.id.pengaturan:
-                        fragment = new PengaturanFragment();
+                        fragment = new Pengaturan1Fragment();
                         break;
                     case R.id.list:
                         fragment= new DaftarpengajuanFragment();

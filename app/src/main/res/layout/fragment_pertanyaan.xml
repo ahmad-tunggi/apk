@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/vector"
+    tools:context=".fragment.PertanyaanFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+   <RelativeLayout
+       android:background="@drawable/white"
+
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_margin="20dp">
+
+       <androidx.recyclerview.widget.RecyclerView
+           tools:listitem="@layout/list_pertanyaan"
+           android:id="@+id/list_ajuan"
+           android:layout_marginHorizontal="15dp"
+           android:layout_marginBottom="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"/>
+
+       <androidx.appcompat.widget.AppCompatButton
+           android:background="@drawable/btn"
+           android:layout_centerHorizontal="true"
+           android:id="@+id/verifikasi"
+           android:layout_alignParentBottom="true"
+           android:layout_width="200dp"
+           android:textSize="25sp"
+           android:layout_height="wrap_content"
+           android:textColor="@color/white"
+           android:text="Verifikasi"/>
+
+   </RelativeLayout>
+
+</FrameLayout>

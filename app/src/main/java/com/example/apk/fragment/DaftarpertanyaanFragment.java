@@ -2,65 +2,94 @@ package com.example.apk.fragment;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.apk.R;
+import com.example.apk.adapter.AdapterAjuan;
+import com.example.apk.adapter.AdapterPertanyaan;
+import com.example.apk.api.Services;
+import com.example.apk.interfaces.ApiRequest;
+import com.example.apk.model.DataAjuan;
+import com.example.apk.model.DataPertanyaan;
+import com.example.apk.response.R_ajuan;
+import com.example.apk.response.R_pertanyaan;
+import com.example.apk.utils.SessionManager;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DaftarpertanyaanFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+
 public class DaftarpertanyaanFragment extends Fragment {
+    private AppCompatButton tambah;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    RecyclerView recyclerView;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    RecyclerView.Adapter adapter;
 
-    public DaftarpertanyaanFragment() {
-        // Required empty public constructor
-    }
+    RecyclerView.LayoutManager layoutManager;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DaftarpertanyaanFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DaftarpertanyaanFragment newInstance(String param1, String param2) {
-        DaftarpertanyaanFragment fragment = new DaftarpertanyaanFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    List<DataPertanyaan> dataPertanyaans = new ArrayList<>();
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_daftarpertanyaan, container, false);
+        View v = inflater.inflate(R.layout.fragment_daftarpertanyaan, container, false);
+        recyclerView = v.findViewById(R.id.list_pertanyaan);
+        AppCompatButton tambah = v.findViewById(R.id.btn_tambah);
+
+        layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        String nim= getArguments().getString("nim");
+//        Log.d("TAG", "onCreateView: "+nim);
+//      Toast.makeText(getActivity(), nim, Toast.LENGTH_SHORT).show();
+        getDataPertanyaan(nim);
+        String kd_surat= getArguments().getString("kd_surat");
+        Log.d("TAG", "onCreateView: "+kd_surat);
+
+        return v;
+    }
+
+
+    private void getDataPertanyaan(String kd_surat) {
+        ApiRequest apiRequest = Services.koneksi().create(ApiRequest.class);
+        Call<R_pertanyaan> call = apiRequest.daftarPertanyaan(kd_surat);
+        call.enqueue(new Callback<R_pertanyaan>() {
+            @Override
+            public void onResponse(Call<R_pertanyaan> call, Response<R_pertanyaan> response) {
+                if (response.isSuccessful()){
+                    Log.d("TAG", "onResponse: "+response.body().getMessages());
+                    dataPertanyaans = response.body().getData();
+                    adapter = new AdapterPertanyaan(getContext(), dataPertanyaans);
+                    recyclerView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+//                    Toast.makeText(getContext(), String , Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getContext(), "Gagal mendapatkan data", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<R_pertanyaan> call, Throwable t) {
+
+            }
+        });
     }
 }

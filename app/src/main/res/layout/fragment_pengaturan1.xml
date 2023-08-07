@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".fragment.Pengaturan1Fragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_profile"
+        android:background="@drawable/bg_profile"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <!-- TODO: Update blank fragment layout -->
+
+        <ImageView
+            android:id="@+id/image"
+            android:src="@drawable/akun"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"/>
+        <TextView
+
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:textSize="25sp"
+            android:id="@+id/username"
+            android:text="Nama Anda"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+        <TextView
+            android:text="Nik"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:id="@+id/nik"
+            android:layout_below="@id/rl_profile"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="User"
+            android:textSize="25sp"
+            android:id="@+id/user"
+            android:textColor="#000"
+            android:layout_below="@id/nik"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/nama_lengkap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user"
+            android:textColor="#000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:text="Nama Lengkap"
+            android:textSize="25sp" />
+
+            <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nama_lengkap"
+            android:textColor="#000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:text="status"
+            android:textSize="25sp" />
+
+            <TextView
+            android:id="@+id/lv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:textColor="#000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:text="lv"
+            android:textSize="25sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_centerHorizontal="true"
+            android:id="@+id/btn_logout"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:background="@drawable/btn"
+            android:text="Logout"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>

@@ -33,8 +33,17 @@
                     android:id="@+id/text_se"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Selamat Datang User"
+                    android:text="Selamat Datang"
                     android:layout_below="@+id/text_hi"
+                    android:textColor="#FFC107"
+                    android:textStyle="bold|normal"
+                    android:textSize="25sp"/>
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama User"
+                    android:layout_below="@+id/text_se"
                     android:textColor="#FFC107"
                     android:textStyle="bold|normal"
                     android:textSize="25sp"/>
@@ -44,7 +53,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:id="@+id/text_ingat"
-                    android:layout_below="@id/text_se"
+                    android:layout_below="@id/username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/articile_subtitle" />
