@@ -1,6 +1,7 @@
 package com.example.apk.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apk.R;
+import com.example.apk.fragment.DaftarpertanyaanFragment;
+import com.example.apk.fragment.EditPertanyaanFragment;
 import com.example.apk.model.DataAjuan;
 import com.example.apk.model.DataPertanyaan;
 
@@ -37,10 +45,19 @@ public class AdapterPertanyaan extends RecyclerView.Adapter<AdapterPertanyaan.Ho
     @Override
     public void onBindViewHolder(@NonNull AdapterPertanyaan.HolderData holder, int position) {
         DataPertanyaan model = dataPertanyaans.get(position);
-//        holder.id_pertanyaan.setText(model.getId_pertanyaan());
-//        holder.kd_surat.setText(model.getKd_surat());
         holder.pertanyaan.setText(model.getPertanyaan());
-
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id_pertanyaan", String.valueOf(model.getId_pertanyaan()));
+                bundle.putString("pertanyaan", String.valueOf(model.getPertanyaan()));
+                Fragment fragment = new EditPertanyaanFragment();
+                fragment.setArguments(bundle);
+                ((FragmentActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+                return true;
+            }
+        });
 
 
     }
@@ -58,5 +75,13 @@ public class AdapterPertanyaan extends RecyclerView.Adapter<AdapterPertanyaan.Ho
 //            kd_surat = itemView.findViewById(R.id.kd_surat);
             pertanyaan = itemView.findViewById(R.id.pertanyaan);
         }
+    }
+
+    private void navigateToLongClickFragment() {
+        FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
+        EditPertanyaanFragment longClickFragment = new EditPertanyaanFragment();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, longClickFragment);
+        fragmentTransaction.commit();
     }
 }

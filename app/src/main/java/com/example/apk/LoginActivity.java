@@ -59,8 +59,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onResponse(Call<R_login> call, Response<R_login> response) {
                 if(response.body() != null && response.isSuccessful() && response.body().isStatus()){
-
-                    // Ini untuk menyimpan sesi
                     sessionManager = new SessionManager(LoginActivity.this);
                     DataLogin loginData = response.body().getDataLogin();
                     sessionManager.createLoginSession(loginData);
@@ -68,15 +66,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     startActivity(intent);
                     finish();
                 } else {
-//                    Toast.makeText(LoginActivity.this, response.body().getMessages(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, response.body().getMessages(), Toast.LENGTH_SHORT).show();
                 }
 
             }
-
             @Override
             public void onFailure(Call<R_login> call, Throwable t) {
                 Toast.makeText(LoginActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-
             }
         });
     }
@@ -103,12 +99,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             } else if (password.equals("")) {
                 el_password.setError("Masukan Password Anda!");
                 Toast.makeText(getApplicationContext(), "Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
-
             } else {
                 login(username, password);
-//                Toast.makeText(getApplicationContext(), "Tidak Jadi", Toast.LENGTH_SHORT).show();
             }
-//            Toast.makeText(LoginActivity.this, "nama : " + username , Toast.LENGTH_SHORT).show();
             break;
         }
     }
