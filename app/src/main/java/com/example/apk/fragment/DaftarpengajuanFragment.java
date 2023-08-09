@@ -33,10 +33,13 @@ public class DaftarpengajuanFragment extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     List<DataAjuan> dataAjuans = new ArrayList<>();
     SessionManager sessionManager;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View v = inflater.inflate(R.layout.fragment_daftarpengajuan, container, false);
         sessionManager = new SessionManager(getContext());
         recyclerView = v.findViewById(R.id.list_ajuan);

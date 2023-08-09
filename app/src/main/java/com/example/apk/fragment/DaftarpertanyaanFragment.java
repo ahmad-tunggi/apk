@@ -23,6 +23,7 @@ import com.example.apk.model.DataPertanyaan;
 import com.example.apk.response.R_ajuan;
 import com.example.apk.response.R_pertanyaan;
 import com.example.apk.utils.SessionManager;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,7 @@ public class DaftarpertanyaanFragment extends Fragment {
     private AppCompatButton tambah, verifikasi;
 
     RecyclerView recyclerView;
+    FloatingActionButton btn_tambah;
 
     RecyclerView.Adapter adapter;
 
@@ -53,7 +55,7 @@ public class DaftarpertanyaanFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_daftarpertanyaan, container, false);
         recyclerView = v.findViewById(R.id.list_pertanyaan);
-        tambah = v.findViewById(R.id.btn_tambah);
+
         verifikasi = v.findViewById(R.id.verif);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);

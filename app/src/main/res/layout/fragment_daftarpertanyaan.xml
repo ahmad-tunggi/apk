@@ -13,12 +13,10 @@
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_tambah"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tambah"/>
+
             <TextView
+                android:layout_marginLeft="60dp"
+
 
                 android:id="@+id/pertanyaan"
                 android:layout_width="wrap_content"
@@ -28,21 +26,51 @@
                 android:textColor="@color/white"
                 android:background="#780062"
                 android:textSize="25sp"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/verif"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Verifikasi"/>
+
+
         </LinearLayout>
         <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
+
         android:layout_below="@id/head"
         tools:listitem="@layout/list_pertanyaan"
         android:id="@+id/list_pertanyaan"
         android:layout_marginHorizontal="15dp"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_pertanyaan"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/verif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="6dp"
+                android:layout_toStartOf="@+id/btn_tambah"
+                android:text="Verifikasi" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_tambah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="14dp"
+                android:backgroundTint="#780062"
+                android:src="@drawable/ic_add" />
+
+        </RelativeLayout>
     </RelativeLayout>
+
 
 </FrameLayout>
