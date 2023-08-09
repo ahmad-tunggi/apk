@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/a"
+    tools:context=".fragment.TambahpertanyaanFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            app:cardCornerRadius="20dp"-->
+<!--            android:backgroundTint="#37022D"/>-->
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:id="@+id/form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="23dp"
+            android:background="#780062"
+            android:paddingLeft="30dp"
+            android:text="Form Tambah Pertanyaan"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:outlineSpotShadowColor="@color/black"
+            android:backgroundTint="#C5C4C4"
+            app:cardCornerRadius="20dp"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/form"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="#C5C4C4">
+
+
+                <EditText
+                    android:id="@+id/edit_tambah"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/white"
+                    android:hint="Tambah Pertanyaan"
+                    android:paddingLeft="20dp"
+                    android:textColor="#780062"
+                    android:textColorHint="#780062"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edit_tambah"
+                    android:layout_marginTop="30dp"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="120dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/corner_edit2"
+                        android:text="Batal"
+                        android:textColor="#780068"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_simpan"
+                        android:layout_width="120dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@+id/btn_cancel"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="-45dp"
+                        android:layout_marginEnd="1dp"
+                        android:background="@drawable/btn"
+                        android:text="Simpan"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+
+</FrameLayout>

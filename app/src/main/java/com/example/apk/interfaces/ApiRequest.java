@@ -1,6 +1,7 @@
 package com.example.apk.interfaces;
 
 import com.example.apk.response.R_ajuan;
+import com.example.apk.response.R_cek;
 import com.example.apk.response.R_login;
 import com.example.apk.response.R_pertanyaan;
 
@@ -25,13 +26,13 @@ public interface ApiRequest {
     @POST("list_pertanyaan/pertanyaan")
     @FormUrlEncoded
     Call<R_pertanyaan>daftarPertanyaan(
-            @Field("nim") String nim
+            @Field("kd") String kd_surat
     );
 
     @POST("cek_api/cek")
     @FormUrlEncoded
     Call<R_cek>cekAjuan(
-            ("kode") String kode
+            @Field("kode") String kode
 
             );
 }
