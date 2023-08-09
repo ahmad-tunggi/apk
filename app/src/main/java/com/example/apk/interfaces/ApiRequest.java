@@ -37,10 +37,18 @@ public interface ApiRequest {
         @Field("pertanyaan") String pertanyaan
     );
 
+    @POST("Daftar_ajuan/verifikasi")
+    @FormUrlEncoded
+    Call<R_ajuan>verifikasi(
+        @Field("kd_surat") String kd_surat
+    );
+
     @POST("cek_api/cek")
     @FormUrlEncoded
     Call<R_cek>cekAjuan(
             @Field("kode") String kode
             );
     Call<R_cek>cekAjuan();
+
+
 }

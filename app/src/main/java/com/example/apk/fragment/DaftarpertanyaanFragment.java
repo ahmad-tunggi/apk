@@ -33,7 +33,7 @@ import retrofit2.Response;
 
 
 public class DaftarpertanyaanFragment extends Fragment {
-    private AppCompatButton tambah;
+    private AppCompatButton tambah, verifikasi;
 
     RecyclerView recyclerView;
 
@@ -46,14 +46,15 @@ public class DaftarpertanyaanFragment extends Fragment {
 
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_daftarpertanyaan, container, false);
         recyclerView = v.findViewById(R.id.list_pertanyaan);
-        AppCompatButton tambah = v.findViewById(R.id.btn_tambah);
-
+        tambah = v.findViewById(R.id.btn_tambah);
+        verifikasi = v.findViewById(R.id.verif);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -62,9 +63,35 @@ public class DaftarpertanyaanFragment extends Fragment {
 //      Toast.makeText(getActivity(), nim, Toast.LENGTH_SHORT).show();
 
         String kd_surat= getArguments().getString("kd_surat");
+        verifikasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                verifikasiAjuan(kd_surat);
+            }
+        });
         getDataPertanyaan(kd_surat);
 
         return v;
+    }
+
+    private void verifikasiAjuan(String kd_surat) {
+        ApiRequest apiRequest = Services.koneksi().create(ApiRequest.class);
+        Call<R_ajuan> call = apiRequest.verifikasi(kd_surat);
+        call.enqueue(new Callback<R_ajuan>() {
+            @Override
+            public void onResponse(Call<R_ajuan> call, Response<R_ajuan> response) {
+                if (response.isSuccessful()){
+                    Toast.makeText(getContext(), "Berhasil melakukan verifikasi", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getContext(), "Gagal melakukan verifikasi", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<R_ajuan> call, Throwable t) {
+                Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
