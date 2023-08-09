@@ -63,7 +63,6 @@ public class DaftarpertanyaanFragment extends Fragment {
 
         String kd_surat= getArguments().getString("kd_surat");
         getDataPertanyaan(kd_surat);
-        Log.d("TAG", "onCreateView: "+kd_surat);
 
         return v;
     }
@@ -76,12 +75,11 @@ public class DaftarpertanyaanFragment extends Fragment {
             @Override
             public void onResponse(Call<R_pertanyaan> call, Response<R_pertanyaan> response) {
                 if (response.isSuccessful()){
-                    Log.d("TAG", "onResponse: "+response.body().isStatus());
                     dataPertanyaans = response.body().getData();
                     adapter = new AdapterPertanyaan(getContext(), dataPertanyaans);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
-//                    Toast.makeText(getContext(), String , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "data "+ dataPertanyaans, Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(getContext(), "Gagal mendapatkan data", Toast.LENGTH_SHORT).show();
                 }
@@ -89,7 +87,7 @@ public class DaftarpertanyaanFragment extends Fragment {
 
             @Override
             public void onFailure(Call<R_pertanyaan> call, Throwable t) {
-
+                Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

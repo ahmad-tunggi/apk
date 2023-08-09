@@ -15,7 +15,8 @@ public interface ApiRequest {
     @FormUrlEncoded
     Call<R_login>login(
             @Field("username") String username,
-            @Field("password") String password);
+            @Field("password") String password
+    );
 
     @POST("daftar_ajuan/list")
     @FormUrlEncoded
@@ -23,16 +24,23 @@ public interface ApiRequest {
             @Field("nik") String nik
     );
 
-    @POST("list_pertanyaan/pertanyaan")
+    @POST("Daftar_ajuan/pertanyaan")
     @FormUrlEncoded
     Call<R_pertanyaan>daftarPertanyaan(
-            @Field("kd") String kd_surat
+            @Field("kd") String kd
+    );
+
+    @POST("Daftar_ajuan/edit_pertanyaan")
+    @FormUrlEncoded
+    Call<R_pertanyaan>editPertanyaan(
+        @Field("id") String id,
+        @Field("pertanyaan") String pertanyaan
     );
 
     @POST("cek_api/cek")
     @FormUrlEncoded
     Call<R_cek>cekAjuan(
             @Field("kode") String kode
-
             );
+    Call<R_cek>cekAjuan();
 }
