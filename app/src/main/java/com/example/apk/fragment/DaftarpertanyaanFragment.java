@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.apk.R;
@@ -37,7 +40,10 @@ public class DaftarpertanyaanFragment extends Fragment {
     private AppCompatButton verifikasi;
 
     RecyclerView recyclerView;
-    FloatingActionButton btn_tambah;
+   private FloatingActionButton btn_tambah;
+    private FragmentManager fragmentManager;
+
+
 
     RecyclerView.Adapter adapter;
 
@@ -50,13 +56,33 @@ public class DaftarpertanyaanFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+//        fragmentManager = getSupportFragmentManager();
+//        fragmentManager.beginTransaction().replace(R.id.frame_layout, new DaftarpertanyaanFragment()).commit();
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_daftarpertanyaan, container, false);
+
         recyclerView = v.findViewById(R.id.list_pertanyaan);
-        FloatingActionButton = v.findViewById(R.id.btn_tambah);
+
         verifikasi = v.findViewById(R.id.verif);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
+        FloatingActionButton   =  v.findViewById(R.id.btn_tambah);
+        FloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout, new TambahpertanyaanFragment());
+                    transaction.commit();
+
+
+
+
+
+            }
+        });
+     
+
 
 
 
@@ -76,9 +102,12 @@ public class DaftarpertanyaanFragment extends Fragment {
         return v;
 
 
-        
+
+
+
 
     }
+
 
 
 
