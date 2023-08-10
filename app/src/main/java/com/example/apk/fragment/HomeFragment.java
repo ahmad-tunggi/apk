@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    TextView username;
+    TextView nama_lengkap;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -67,9 +67,10 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        username = view.findViewById(R.id.username);
+        nama_lengkap = view.findViewById(R.id.username);
         SessionManager sessionManager = new SessionManager(getContext());
-        username.setText(sessionManager.getStatus());
+        nama_lengkap.setText(sessionManager.getNamaLengkap());
+//        nama_lengkap.setText(sessionManager.getNamaLengkap());
         return view;
     }
 

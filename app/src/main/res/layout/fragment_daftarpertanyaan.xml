@@ -70,7 +70,7 @@
                 android:text="Verifikasi"
                 />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_tambah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

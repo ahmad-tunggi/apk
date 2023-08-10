@@ -34,7 +34,7 @@ import retrofit2.Response;
 
 
 public class DaftarpertanyaanFragment extends Fragment {
-    private AppCompatButton tambah, verifikasi;
+    private AppCompatButton verifikasi;
 
     RecyclerView recyclerView;
     FloatingActionButton btn_tambah;
@@ -44,9 +44,7 @@ public class DaftarpertanyaanFragment extends Fragment {
     RecyclerView.LayoutManager layoutManager;
 
     List<DataPertanyaan> dataPertanyaans = new ArrayList<>();
-
-
-
+    private View FloatingActionButton;
 
 
     @Override
@@ -55,10 +53,12 @@ public class DaftarpertanyaanFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_daftarpertanyaan, container, false);
         recyclerView = v.findViewById(R.id.list_pertanyaan);
-
+        FloatingActionButton = v.findViewById(R.id.btn_tambah);
         verifikasi = v.findViewById(R.id.verif);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
+
+
 
         String nim= getArguments().getString("nim");
 //        Log.d("TAG", "onCreateView: "+nim);
@@ -74,7 +74,14 @@ public class DaftarpertanyaanFragment extends Fragment {
         getDataPertanyaan(kd_surat);
 
         return v;
+
+
+        
+
     }
+
+
+
 
     private void verifikasiAjuan(String kd_surat) {
         ApiRequest apiRequest = Services.koneksi().create(ApiRequest.class);
