@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.apk.R;
@@ -35,11 +36,13 @@ import retrofit2.Response;
 
 
 public class DaftarpertanyaanFragment extends Fragment {
-    private AppCompatButton tambah, verifikasi;
+    private AppCompatButton verifikasi;
 
     RecyclerView recyclerView;
 
     FloatingActionButton btn_tambah;
+
+
 
     RecyclerView.Adapter adapter;
 
@@ -54,8 +57,11 @@ public class DaftarpertanyaanFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+//        fragmentManager = getSupportFragmentManager();
+//        fragmentManager.beginTransaction().replace(R.id.frame_layout, new DaftarpertanyaanFragment()).commit();
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_daftarpertanyaan, container, false);
+
         recyclerView = v.findViewById(R.id.list_pertanyaan);
 
         verifikasi = v.findViewById(R.id.verif);
@@ -86,7 +92,17 @@ public class DaftarpertanyaanFragment extends Fragment {
         getDataPertanyaan(kd_surat);
 
         return v;
+
+
+
+
+
+
     }
+
+
+
+
 
     private void verifikasiAjuan(String kd_surat) {
         ApiRequest apiRequest = Services.koneksi().create(ApiRequest.class);
