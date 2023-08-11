@@ -50,5 +50,10 @@ public interface ApiRequest {
             );
     Call<R_cek>cekAjuan();
 
-
+    @POST("Daftar_ajuan/tambah_pertanyaan")
+    @FormUrlEncoded
+    Call<R_pertanyaan> tambahPertanyaan(
+        @Field("kd_surat") String kd_surat,
+        @Field("pertanyaan") String pertanyaan
+    );
 }

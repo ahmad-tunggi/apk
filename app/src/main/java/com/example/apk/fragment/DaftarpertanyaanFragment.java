@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,6 +38,7 @@ public class DaftarpertanyaanFragment extends Fragment {
     private AppCompatButton tambah, verifikasi;
 
     RecyclerView recyclerView;
+
     FloatingActionButton btn_tambah;
 
     RecyclerView.Adapter adapter;
@@ -46,8 +48,8 @@ public class DaftarpertanyaanFragment extends Fragment {
     List<DataPertanyaan> dataPertanyaans = new ArrayList<>();
 
 
-
-
+    FragmentManager fragmentManager;
+    String kd_surat;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,12 +61,22 @@ public class DaftarpertanyaanFragment extends Fragment {
         verifikasi = v.findViewById(R.id.verif);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-
-        String nim= getArguments().getString("nim");
-//        Log.d("TAG", "onCreateView: "+nim);
-//      Toast.makeText(getActivity(), nim, Toast.LENGTH_SHORT).show();
-
-        String kd_surat= getArguments().getString("kd_surat");
+        btn_tambah = v.findViewById(R.id.btn_tambah);
+        kd_surat = getArguments().getString("kd_surat");
+        btn_tambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("kd_surat", kd_surat);
+                Fragment fragment = new TambahpertanyaanFragment();
+                fragment.setArguments(bundle);
+                fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .commit();
+            }
+        });
+        String nim = getArguments().getString("nim");
         verifikasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +96,10 @@ public class DaftarpertanyaanFragment extends Fragment {
             public void onResponse(Call<R_ajuan> call, Response<R_ajuan> response) {
                 if (response.isSuccessful()){
                     Toast.makeText(getContext(), "Berhasil melakukan verifikasi", Toast.LENGTH_SHORT).show();
+                    fragmentManager = getActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.frame_layout, new DaftarpengajuanFragment())
+                            .commit();
                 }else {
                     Toast.makeText(getContext(), "Gagal melakukan verifikasi", Toast.LENGTH_SHORT).show();
                 }
