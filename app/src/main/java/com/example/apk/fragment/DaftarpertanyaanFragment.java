@@ -1,6 +1,10 @@
 package com.example.apk.fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
@@ -8,23 +12,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
-
 import com.example.apk.R;
-import com.example.apk.adapter.AdapterAjuan;
 import com.example.apk.adapter.AdapterPertanyaan;
 import com.example.apk.api.Services;
 import com.example.apk.interfaces.ApiRequest;
-import com.example.apk.model.DataAjuan;
 import com.example.apk.model.DataPertanyaan;
 import com.example.apk.response.R_ajuan;
 import com.example.apk.response.R_pertanyaan;
-import com.example.apk.utils.SessionManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
