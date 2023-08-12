@@ -14,31 +14,31 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apk.R;
 import com.example.apk.fragment.DaftarpertanyaanFragment;
-import com.example.apk.model.DataAjuan;
+import com.example.apk.model.DataTelahverifikasi;
 
 import java.util.List;
 
-public class AdapterAjuan extends RecyclerView.Adapter<AdapterAjuan.HolderData> {
+public class AdapterTelahverfikasi extends RecyclerView.Adapter<AdapterTelahverfikasi.HolderData> {
     private Context context;
-    private List<DataAjuan> dataAjuan;
+    private List<DataTelahverifikasi> dataTelahverifikasi;
 
-    public AdapterAjuan(Context context, List<DataAjuan> dataAjuan){
+    public AdapterTelahverfikasi(Context context, List<DataTelahverifikasi> dataTelahverifikasi){
 
         this.context = context;
-        this.dataAjuan = dataAjuan;
+        this.dataTelahverifikasi = dataTelahverifikasi;
     }
 
     @NonNull
     @Override
-    public AdapterAjuan.HolderData onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterTelahverfikasi.HolderData onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_ajuan, parent, false);
         HolderData holderData = new HolderData(layout);
         return holderData;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterAjuan.HolderData holder, int position) {
-        DataAjuan model = dataAjuan.get(position);
+    public void onBindViewHolder(@NonNull AdapterTelahverfikasi.HolderData holder, int position) {
+        DataTelahverifikasi model = dataTelahverifikasi.get(position);
         holder.nama.setText(model.getNama_lengkap());
         holder.nim.setText(model.getNim());
         holder.judul.setText(model.getJudul());
@@ -61,7 +61,7 @@ public class AdapterAjuan extends RecyclerView.Adapter<AdapterAjuan.HolderData> 
 
     @Override
     public int getItemCount() {
-        return dataAjuan.size();
+        return dataTelahverifikasi.size();
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
