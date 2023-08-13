@@ -27,8 +27,8 @@ public interface ApiRequest {
 
     @POST("Daftar_ajuan/hapus_pertanyaan")
     @FormUrlEncoded
-    Call<R_pertanyaan>hapusPertanyaan(
-            @Field("id") String id
+    Call<R_pertanyaan>hapusPertanyaan
+            (@Field("id") String id
     );
 
     @POST("Daftar_ajuan/pertanyaan")
