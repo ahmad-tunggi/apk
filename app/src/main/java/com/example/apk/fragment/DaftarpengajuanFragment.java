@@ -1,15 +1,14 @@
 package com.example.apk.fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apk.R;
 import com.example.apk.adapter.AdapterAjuan;
@@ -61,6 +60,7 @@ public class DaftarpengajuanFragment extends Fragment {
                     adapter = new AdapterAjuan(getContext(), dataAjuans);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
+
                 }else {
                     Toast.makeText(getContext(), "Gagal mendapatkan data", Toast.LENGTH_SHORT).show();
                 }

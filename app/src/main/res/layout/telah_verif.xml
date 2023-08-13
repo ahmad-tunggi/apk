@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_marginTop="7dp"
+    android:layout_height="150dp">
+
+        <LinearLayout
+            android:layout_width="390dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/person" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+                <TextView
+                    android:id="@+id/nama1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ahmad Tunggi"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#780062"/>
+                <TextView
+                    android:id="@+id/nim1"
+                    android:layout_below="@id/nama1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="nim"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#780062"/>
+
+                <TextView
+                    android:id="@+id/judul1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nim1"
+                    android:text="judul"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textColor="#780062"/>
+
+                <TextView
+                    android:id="@+id/instansi1"
+                    android:layout_below="@id/judul1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Instansi"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textColor="#780062"/>
+                <TextView
+                    android:id="@+id/lokasi1"
+                    android:layout_below="@id/instansi1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lokasi"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textColor="#780062"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>
