@@ -25,10 +25,10 @@ public interface ApiRequest {
             @Field("nik") String nik
     );
 
-    @POST("daftar_ajuan/hapus_pertanyaan")
+    @POST("Daftar_ajuan/hapus_pertanyaan")
     @FormUrlEncoded
-    Call<R_pertanyaan>hapusPertanyaan(
-            @Field("id") String id
+    Call<R_pertanyaan>hapusPertanyaan
+            (@Field("id") String id
     );
 
     @POST("Daftar_ajuan/pertanyaan")

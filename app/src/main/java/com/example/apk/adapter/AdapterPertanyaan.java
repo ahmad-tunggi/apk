@@ -77,6 +77,7 @@ public class AdapterPertanyaan extends RecyclerView.Adapter<AdapterPertanyaan.Ho
     }
 
     private void deletePertanyaan(String idPertanyaan) {
+        Toast.makeText(context.getApplicationContext(), idPertanyaan, Toast.LENGTH_SHORT).show();
         ApiRequest apiRequest = Services.koneksi().create(ApiRequest.class);
         Call<R_pertanyaan> call = apiRequest.hapusPertanyaan(idPertanyaan);
         call.enqueue(new Callback<R_pertanyaan>() {
