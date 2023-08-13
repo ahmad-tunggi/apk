@@ -17,12 +17,19 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apk.R;
+import com.example.apk.api.Services;
 import com.example.apk.fragment.DaftarpertanyaanFragment;
 import com.example.apk.fragment.EditPertanyaanFragment;
+import com.example.apk.interfaces.ApiRequest;
 import com.example.apk.model.DataAjuan;
 import com.example.apk.model.DataPertanyaan;
+import com.example.apk.response.R_pertanyaan;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AdapterPertanyaan extends RecyclerView.Adapter<AdapterPertanyaan.HolderData> {
 
@@ -49,17 +56,44 @@ public class AdapterPertanyaan extends RecyclerView.Adapter<AdapterPertanyaan.Ho
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                deletePertanyaan(model.getId_pertanyaan());
+                return true;
+            }
+        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString("id_pertanyaan", String.valueOf(model.getId_pertanyaan()));
                 bundle.putString("pertanyaan", String.valueOf(model.getPertanyaan()));
                 Fragment fragment = new EditPertanyaanFragment();
                 fragment.setArguments(bundle);
                 ((FragmentActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
-                return true;
             }
         });
 
 
+    }
+
+    private void deletePertanyaan(String idPertanyaan) {
+        ApiRequest apiRequest = Services.koneksi().create(ApiRequest.class);
+        Call<R_pertanyaan> call = apiRequest.hapusPertanyaan(idPertanyaan);
+        call.enqueue(new Callback<R_pertanyaan>() {
+            @Override
+            public void onResponse(Call<R_pertanyaan> call, Response<R_pertanyaan> response) {
+                if (response.isSuccessful()){
+                    Toast.makeText(context.getApplicationContext(), "Berhasil menghapus", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(context.getApplicationContext(), "Gagal menghapus", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<R_pertanyaan> call, Throwable t) {
+
+            }
+        });
     }
 
     @Override
