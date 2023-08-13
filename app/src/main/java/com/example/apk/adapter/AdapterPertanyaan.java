@@ -18,10 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apk.R;
 import com.example.apk.api.Services;
-import com.example.apk.fragment.DaftarpertanyaanFragment;
 import com.example.apk.fragment.EditPertanyaanFragment;
 import com.example.apk.interfaces.ApiRequest;
-import com.example.apk.model.DataAjuan;
 import com.example.apk.model.DataPertanyaan;
 import com.example.apk.response.R_pertanyaan;
 
@@ -77,6 +75,7 @@ public class AdapterPertanyaan extends RecyclerView.Adapter<AdapterPertanyaan.Ho
     }
 
     private void deletePertanyaan(String idPertanyaan) {
+        Toast.makeText(context.getApplicationContext(), idPertanyaan, Toast.LENGTH_SHORT).show();
         ApiRequest apiRequest = Services.koneksi().create(ApiRequest.class);
         Call<R_pertanyaan> call = apiRequest.hapusPertanyaan(idPertanyaan);
         call.enqueue(new Callback<R_pertanyaan>() {

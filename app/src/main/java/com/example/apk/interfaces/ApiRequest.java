@@ -25,7 +25,7 @@ public interface ApiRequest {
             @Field("nik") String nik
     );
 
-    @POST("daftar_ajuan/hapus")
+    @POST("Daftar_ajuan/hapus_pertanyaan")
     @FormUrlEncoded
     Call<R_pertanyaan>hapusPertanyaan(
             @Field("id") String id
