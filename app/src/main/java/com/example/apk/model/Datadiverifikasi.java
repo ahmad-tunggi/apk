@@ -1,8 +1,9 @@
 package com.example.apk.model;
 
-public class DataTelahverifikasi {
+public class Datadiverifikasi {
+
     private String kd_surat;
-    private String nim;
+    private  String nim;
     private String nama_lengkap;
     private String perihal;
     private String tujuan_surat;
@@ -17,8 +18,6 @@ public class DataTelahverifikasi {
     public void setKd_surat(String kd_surat) {
         this.kd_surat = kd_surat;
     }
-
-
 
     public String getNim() {
         return nim;
@@ -75,4 +74,6 @@ public class DataTelahverifikasi {
     public void setJudul(String judul) {
         this.judul = judul;
     }
+
+
 }

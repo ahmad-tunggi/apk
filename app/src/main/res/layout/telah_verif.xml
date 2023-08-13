@@ -19,7 +19,7 @@
                 android:layout_height="match_parent"
                 android:padding="5dp">
                 <TextView
-                    android:id="@+id/nama"
+                    android:id="@+id/nama1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ahmad Tunggi"
@@ -27,8 +27,8 @@
                     android:textStyle="bold"
                     android:textColor="#780062"/>
                 <TextView
-                    android:id="@+id/nim"
-                    android:layout_below="@id/nama"
+                    android:id="@+id/nim1"
+                    android:layout_below="@id/nama1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="nim"
@@ -37,18 +37,18 @@
                     android:textColor="#780062"/>
 
                 <TextView
-                    android:id="@+id/judul"
+                    android:id="@+id/judul1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/nim"
+                    android:layout_below="@+id/nim1"
                     android:text="judul"
                     android:textSize="20dp"
                     android:textStyle="normal"
                     android:textColor="#780062"/>
 
                 <TextView
-                    android:id="@+id/instansi"
-                    android:layout_below="@id/judul"
+                    android:id="@+id/instansi1"
+                    android:layout_below="@id/judul1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Instansi"
@@ -56,8 +56,8 @@
                     android:textStyle="normal"
                     android:textColor="#780062"/>
                 <TextView
-                    android:id="@+id/lokasi"
-                    android:layout_below="@id/instansi"
+                    android:id="@+id/lokasi1"
+                    android:layout_below="@id/instansi1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Lokasi"

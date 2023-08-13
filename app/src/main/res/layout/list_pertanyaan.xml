@@ -18,15 +18,39 @@
                 </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
-            <TextView
-                android:id="@+id/pertanyaan"
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ahmad Tunggi"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:background="#CCCCCC"
-                android:textColor="#780062"/>
+                app:cardCornerRadius="5dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#CCCCCC"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/pertanyaan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ahmad Tunggi"
+                        android:textStyle="bold"
+
+                        android:textColor="#780062"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_delete"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/baseline_delete_24"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_edit"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/baseline_edit_24"/>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
 
 
 

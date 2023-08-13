@@ -2,9 +2,9 @@ package com.example.apk.interfaces;
 
 import com.example.apk.response.R_ajuan;
 import com.example.apk.response.R_cek;
+import com.example.apk.response.R_diverifikasi;
 import com.example.apk.response.R_login;
 import com.example.apk.response.R_pertanyaan;
-import com.example.apk.response.R_telahverifkasi;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -58,9 +58,9 @@ public interface ApiRequest {
             @Field("kd_surat") String kd_surat,
             @Field("pertanyaan") String pertanyaan
     );
-    @POST("Daftar_ajuan/list")
+    @POST("Daftar_ajuan/diverifikasi")
     @FormUrlEncoded
-    Call<R_telahverifkasi> telahVerifikasi(
+    Call<R_diverifikasi> diVerifikasi(
             @Field("nik") String nik
     );
 }
