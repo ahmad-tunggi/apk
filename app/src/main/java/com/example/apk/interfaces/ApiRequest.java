@@ -64,7 +64,7 @@ public interface ApiRequest {
             @Field("kd_surat") String kd_surat,
             @Field("pertanyaan") String pertanyaan
     );
-    @POST("Daftar_ajuan/diverifikasi")
+    @POST("daftar_ajuan/diverifikasi")
     @FormUrlEncoded
     Call<R_diverifikasi> diVerifikasi(
             @Field("nik") String nik

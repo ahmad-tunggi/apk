@@ -1,5 +1,7 @@
 package com.example.apk.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -104,16 +106,37 @@ public class DaftarpertanyaanFragment extends Fragment {
         call.enqueue(new Callback<R_ajuan>() {
             @Override
             public void onResponse(Call<R_ajuan> call, Response<R_ajuan> response) {
-                if (response.isSuccessful()){
-                    Toast.makeText(getContext(), "Berhasil melakukan verifikasi", Toast.LENGTH_SHORT).show();
-                    fragmentManager = getActivity().getSupportFragmentManager();
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.frame_layout, new DaftarpengajuanFragment())
-                            .commit();
-                }else {
+                if (response.isSuccessful()) {
+                    // Membuat dialog konfirmasi
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle("Konfirmasi Verifikasi");
+                    builder.setMessage("Apakah Anda yakin ingin melakukan verifikasi?");
+                    builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Kode yang akan dijalankan jika tombol "Ya" ditekan
+                            Toast.makeText(getContext(), "Berhasil melakukan verifikasi", Toast.LENGTH_SHORT).show();
+                            fragmentManager = getActivity().getSupportFragmentManager();
+                            fragmentManager.beginTransaction()
+                                    .replace(R.id.frame_layout, new DaftarpengajuanFragment())
+                                    .commit();
+                        }
+                    });
+                    builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Kode yang akan dijalankan jika tombol "Tidak" ditekan
+                            dialog.dismiss(); // Menutup dialog
+                        }
+                    });
+                    // Membuat dan menampilkan dialog
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                } else {
                     Toast.makeText(getContext(), "Gagal melakukan verifikasi", Toast.LENGTH_SHORT).show();
                 }
             }
+
 
             @Override
             public void onFailure(Call<R_ajuan> call, Throwable t) {

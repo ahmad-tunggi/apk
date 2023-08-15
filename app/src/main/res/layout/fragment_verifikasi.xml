@@ -24,7 +24,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        tools:listitem="@layout/list_ajuan"
+        tools:listitem="@layout/telah_verif"
         android:id="@+id/telah_verif"
         android:layout_marginHorizontal="15dp"
         android:layout_marginBottom="10dp"
