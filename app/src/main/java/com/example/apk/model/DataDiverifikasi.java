@@ -1,6 +1,6 @@
 package com.example.apk.model;
 
-public class Datadiverifikasi {
+public class DataDiverifikasi {
 
     private String kd_surat;
     private  String nim;

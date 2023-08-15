@@ -1,23 +1,23 @@
 package com.example.apk.response;
 
-import com.example.apk.model.Datadiverifikasi;
+import com.example.apk.model.DataDiverifikasi;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 public class R_diverifikasi {
     @SerializedName("data")
-    private List<Datadiverifikasi> data;
+    private List<DataDiverifikasi> data;
     @SerializedName("messages")
     private String messages;
 
     @SerializedName("status")
     private String status;
 
-    public List<Datadiverifikasi> getData() {
+    public List<DataDiverifikasi> getData() {
         return data;
     }
-    public void setData(List<Datadiverifikasi> data) {
+    public void setData(List<DataDiverifikasi> data) {
         this.data = data;
     }
     public String getMessages(){
