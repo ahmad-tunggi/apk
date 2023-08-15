@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        app:navigationIcon="@drawable/ic_back">
+        app:navigationIcon="@drawable/btn">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -34,12 +34,12 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        tools:listitem="@layout/list_ajuan"
         android:id="@+id/list_ajuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="120dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        tools:listitem="@layout/list_ajuan" />
 
 </FrameLayout>

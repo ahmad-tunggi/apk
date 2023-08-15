@@ -4,16 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp"
     android:layout_marginTop="7dp"
-    android:layout_height="150dp">
+    android:layout_height="110dp">
 
         <LinearLayout
             android:layout_width="390dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/person" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -23,7 +20,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ahmad Tunggi"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     android:textColor="#780062"/>
                 <TextView
@@ -32,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="nim"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     android:textColor="#780062"/>
 
@@ -42,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/nim"
                     android:text="judul"
-                    android:textSize="20dp"
+                    android:textSize="10dp"
                     android:textStyle="normal"
                     android:textColor="#780062"/>
 
@@ -52,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Instansi"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="normal"
                     android:textColor="#780062"/>
                 <TextView
@@ -61,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Lokasi"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="normal"
                     android:textColor="#780062"/>
             </RelativeLayout>
